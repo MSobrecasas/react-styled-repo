@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
-function Title({value}) {
+function Title({ value }) {
   return (
-    <Div>
+    <Div className="sideTitle">
       <h1>{value}</h1>
     </Div>
-  )
+  );
 }
 
-  const Div = styled.div `
+const Div = styled.div`
   position: relative;
-  h1{
+  h1 {
     position: absolute;
     transform: translateX(-47%) translateY(20vw) rotate(-90deg);
     font-size: 7rem;
@@ -19,6 +19,6 @@ function Title({value}) {
     color: var(--secondary-color);
     font-weight: 100;
   }
-  `;
+`;
 
-export default Title
+export default Title;
