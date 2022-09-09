@@ -1,9 +1,113 @@
-import React from 'react'
+import React from "react";
+import placeholder from "../assets/placeholder.png";
+import play from "../assets/play.png";
+import styled from "styled-components";
+import Title from "./Title";
 
 function Blog() {
+  const blogsData = [
+    {
+      title: "Lorem Ipsum",
+      type: "Adventure",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et fugiat neque atque accusantium, dolores iste itaque vitae asperiores harum animi illo perferendis sapiente rem repudiandae, magnam, aliquid nobis ullam.",
+    },
+    {
+      title: "Lorem Ipsum",
+      type: "Personal",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et fugiat neque atque accusantium, dolores iste itaque vitae asperiores harum animi illo perferendis sapiente rem repudiandae, magnam, aliquid nobis ullam.",
+    },
+    {
+      title: "Lorem Ipsum",
+      type: "Music",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et fugiat neque atque accusantium, dolores iste itaque vitae asperiores harum animi illo perferendis sapiente rem repudiandae, magnam, aliquid nobis ullam.",
+    },
+  ];
   return (
-    <div>Blog</div>
-  )
+    <Section id="blog">
+      <Title value="blog" />
+      <div className="decoration"></div>
+      <div className="blogs">
+        {blogsData.map(({ title, type, description }) => {
+          return (
+            <div className="blog">
+              <div className="image">
+                <img src={placeholder} alt="Placeholder" />
+              </div>
+              <div className="title">
+                <h3>{title}</h3>
+              </div>
+              <span className="type">{type}</span>
+              <div className="description">
+                <p>{description}</p>
+              </div>
+              <div className="more">
+                <img src={play} alt="playu" />
+                <span>Read More</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </Section>
+  );
 }
-
-export default Blog
+const Section = styled.section`
+  min-height: 100vh;
+  position: relative;
+  .decoration {
+    position: absolute;
+    height: 20rem;
+    width: 70vw;
+    border: 0.5rem solid var(--secondary-color);
+    left: 15%;
+    top: -2rem;
+  }
+  .blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 5rem 20rem;
+    .blog {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .image {
+        height: 22rem;
+        background-color: #a686f0af;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .title {
+        h3 {
+          color: var(--secondary-color);
+          font-size: 2rem;
+        }
+      }
+      .type {     
+          color: var(--primary-color);
+          font-weight: bolder;
+          text-transform: uppercase;
+      }
+      .description{
+        height: 10rem;
+        color: var(--primary-color);
+      }
+      .more{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        span{
+          letter-spacing: 0.1rem;
+          text-transform: uppercase;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+`;
+export default Blog;

@@ -8,11 +8,11 @@ import Title from "./Title";
 
 function Portfolio() {
   return (
-    <Section id="portfiolio">
+    <Section id="portfolio">
       <Title value="Portfolio" />
       <div className="background">
-        <img src={portfolio1} alt="Desing" className="desing1" />
-        <img src={portfolio2} alt="Desing" className="desing2" />
+        <img src={portfolio1} alt="Design" className="design1" />
+        <img src={portfolio2} alt="Design" className="design2" />
       </div>
       <div className="portfolio__title">
         <p>Our Works </p>
@@ -57,13 +57,13 @@ const Section = styled.section`
   background-color: var(--secondary-color);
   .background {
     position: absolute;
-    .desing1 {
+    .design1 {
       position: absolute;
       z-index: 1;
       right: 8%;
       top: 0;
     }
-    .desing2 {
+    .design2 {
       position: absolute;
       z-index: 1;
       left: 0;
