@@ -4,11 +4,20 @@ import logo from "../assets/logo.png";
 import { GiHamBurgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import { useScroll } from "components/UseScroll";
+import { motion } from "framer-motion";
+import { navAnimation } from "animation";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [element, controls] = useScroll();
   return (
-    <Nav>
+    <Nav
+      ref={element}
+      variants={navAnimation}
+      transition={{ delay: 0.1 }}
+      animate={controls}
+    >
       <div className="brand__container">
         <a href="" className="brand">
           <img src={logo} alt="logo" />
@@ -20,19 +29,19 @@ function Navbar() {
           <li className="active">
             <a href="#home">Home</a>
           </li>
-          <li >
+          <li>
             <a href="#services">Services</a>
           </li>
-          <li >
+          <li>
             <a href="#portfolio">Portfolio</a>
           </li>
-          <li >
+          <li>
             <a href="#blog">Blog</a>
           </li>
-          <li >
+          <li>
             <a href="#skills">Skills</a>
           </li>
-          <li >
+          <li>
             <a href="#contact">Contact</a>
           </li>
         </ul>
@@ -41,29 +50,29 @@ function Navbar() {
   );
 }
 
-const Nav = styled.nav`
+const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
   margin: 0 12rem;
-  padding-top: 1rem;
-  .brand__container{
+  padding-top: 2rem;
+  .brand__container {
     margin: 0 2 rem;
-    .toggle{
+    .toggle {
       display: none;
     }
   }
-  .links{
-    ul{
+  .links {
+    ul {
       list-style-type: none;
       display: flex;
       gap: 3rem;
-      .active{
-        a{
+      .active {
+        a {
           border-bottom: 0.2rem solid var(--secondary-color);
         }
       }
-      li{
-        a{
+      li {
+        a {
           color: white;
           text-decoration: none;
           font-weight: bold;

@@ -15,7 +15,7 @@ import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <motion.div initials="hidden" animate="show">
+    <motion.div initial="hidden" animate="show">
       <ScrollToTop />
       <Home />
       <Services />

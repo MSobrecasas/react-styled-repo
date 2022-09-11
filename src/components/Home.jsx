@@ -3,12 +3,18 @@ import styled from "styled-components";
 import home from "../assets/home.png";
 import play from "../assets/play.png";
 import Navbar from "./Navbar";
+import { motion } from "framer-motion";
+import { homeAnimation, homeInfoAnimation } from "animation";
 
 function Home() {
   return (
     <Section id="home">
       <Navbar />
-      <div className="home">
+      <motion.div
+        variants={homeAnimation}
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+        className="home"
+      >
         <div className="content">
           <div className="title">
             <h1>Digital Crafters</h1>
@@ -23,8 +29,10 @@ function Home() {
           </div>
           <img src={play} alt="play button" />
         </div>
-      </div>
-      <div className="info">
+      </motion.div>
+      <motion.div className="info"
+      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+      variants={homeInfoAnimation}>
         <div className="grid">
           <div className="col">
             <strong>Agency</strong>
@@ -54,7 +62,7 @@ function Home() {
             <p>lorem Ipsum</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }
