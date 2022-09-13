@@ -4,8 +4,12 @@ import testimonial1 from "../assets/testimonial1.png";
 import testimonial2 from "../assets/testimonial2.png";
 import styled from "styled-components";
 import Title from "./Title";
+import { motion } from "framer-motion";
+import { testimonialsAnimation } from "animation";
+import { useScroll } from "components/UseScroll";
 
 function Testimonials() {
+  const [element, controls] = useScroll();
   const [selected, setSelected] = useState(0);
   const testimonials = [
     {
@@ -28,7 +32,8 @@ function Testimonials() {
     },
   ];
   return (
-    <Section>
+    <Section ref={element}>
+      <Title value="Testimonials" />
       <div className="background">
         <img src={testimonial1} alt="Design" className="design1" />
         <img src={testimonial2} alt="Design" className="design2" />
@@ -37,7 +42,14 @@ function Testimonials() {
         <div className="testimonials">
           {testimonials.map(({ designation, name, review }, index) => {
             return (
-              <div
+              <motion.div
+                variants={testimonialsAnimation}
+                animate={controls}
+                transition={{
+                  delay: 0.03,
+                  type: "tween",
+                  duration: 0.8,
+                }}
                 className={`testimonial ${
                   selected === index ? "active" : "hidden"
                 }`}
@@ -54,7 +66,7 @@ function Testimonials() {
                   <h3 className="title">{name}</h3>
                 </div>
                 <p className="description">{review}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -137,29 +149,33 @@ const Section = styled.section`
         display: none;
       }
       color: white;
-      .designation{
+      .designation {
         color: var(--secondary-color);
       }
-      .description{
+      .description {
         height: 8rem;
       }
-    
     }
-    .controls{
+    .controls {
       display: flex;
       gap: 1rem;
     }
-    button{
+    button {
       padding: 0.5rem;
       border-radius: 1rem;
       background-color: var(--secondary-color);
       border: 0.1rem solid transparent;
       cursor: pointer;
     }
-    .active{
+    .active {
       background-color: transparent;
       border-color: var(--secondary-color);
-
+    }
+  }
+  .sideTitle {
+    z-index: 2;
+    h1 {
+      color: white;
     }
   }
 `;

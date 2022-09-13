@@ -3,8 +3,12 @@ import placeholder from "../assets/placeholder.png";
 import play from "../assets/play.png";
 import styled from "styled-components";
 import Title from "./Title";
+import { motion } from "framer-motion";
+import { blogsAnimation } from "animation";
+import { useScroll } from "components/UseScroll";
 
 function Blog() {
+  const [element, controls] = useScroll();
   const blogsData = [
     {
       title: "Lorem Ipsum",
@@ -26,13 +30,22 @@ function Blog() {
     },
   ];
   return (
-    <Section id="blog">
+    <Section id="blog" ref={element}>
       <Title value="blog" />
       <div className="decoration"></div>
       <div className="blogs">
         {blogsData.map(({ title, type, description }) => {
           return (
-            <div className="blog">
+            <motion.div
+              variants={blogsAnimation}
+              animate={controls}
+              transition={{
+                delay: 0.03,
+                type: "tween",
+                duration: 0.8,
+              }}
+              className="blog"
+            >
               <div className="image">
                 <img src={placeholder} alt="Placeholder" />
               </div>
@@ -47,7 +60,7 @@ function Blog() {
                 <img src={play} alt="playu" />
                 <span>Read More</span>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>
@@ -87,21 +100,21 @@ const Section = styled.section`
           font-size: 2rem;
         }
       }
-      .type {     
-          color: var(--primary-color);
-          font-weight: bolder;
-          text-transform: uppercase;
+      .type {
+        color: var(--primary-color);
+        font-weight: bolder;
+        text-transform: uppercase;
       }
-      .description{
+      .description {
         height: 10rem;
         color: var(--primary-color);
       }
-      .more{
+      .more {
         display: flex;
         align-items: center;
         gap: 1rem;
         cursor: pointer;
-        span{
+        span {
           letter-spacing: 0.1rem;
           text-transform: uppercase;
           color: var(--primary-color);

@@ -4,8 +4,12 @@ import pricing1 from "../assets/pricing1.png";
 import pricing2 from "../assets/pricing2.png";
 import styled from "styled-components";
 import Title from "./Title";
+import { motion } from "framer-motion";
+import { pricingAnimation } from "animation";
+import { useScroll } from "components/UseScroll";
 
 function Pricing() {
+  const [element, controls] = useScroll();
   const plans = [
     {
       name: "Basic",
@@ -64,7 +68,7 @@ function Pricing() {
     },
   ];
   return (
-    <Section>
+    <Section ref={element}>
       <Title value="pricing" />
       <div className="background">
         <img src={pricing1} alt="Design" className="bg1" />
@@ -77,7 +81,17 @@ function Pricing() {
       <div className="pricing">
         {plans.map(({ name, price }, index) => {
           return (
-            <div className="pricing__plan" key={index}>
+            <motion.div
+              variants={pricingAnimation}
+              animate={controls}
+              transition={{
+                delay: 0.03,
+                type: "tween",
+                duration: 0.8,
+              }}
+              className="pricing__plan"
+              key={index}
+            >
               <div className="pricing__plan__name">
                 <h2>{name}</h2>
                 <div className="pricing__plan__name__price">
@@ -114,7 +128,7 @@ function Pricing() {
                   <img src={play} alt="Order Now" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

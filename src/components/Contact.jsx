@@ -1,12 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import Title from "./Title";
+import { motion } from "framer-motion";
+import { contactAnimation } from "animation";
+import { useScroll } from "components/UseScroll";
 
 function Contact() {
+  const [element, controls] = useScroll();
   return (
-    <Section id="contact">
+    <Section id="contact" ref={element}>
       <Title value="contact" />
-      <div className="contact">
+      <motion.div
+        animate={controls}
+        variants={contactAnimation}
+        transition={{
+          delay: 0.03,
+          type: "tween",
+          duration: 0.8,
+        }}
+        className="contact"
+      >
         <div className="contact__title">
           <p>Stay in touch with us</p>
           <h2>Lorem ipsum dolor sit amet consectetur!</h2>
@@ -43,7 +56,7 @@ function Contact() {
             <button>Send Message</button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 }
