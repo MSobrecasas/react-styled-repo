@@ -94,6 +94,18 @@ const Section = styled.section`
       }
     }
   }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    height: 100%;
+    .background {
+      display: none;
+    }
+    .milestones {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+  }
 `;
 
 export default Milestones;

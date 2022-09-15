@@ -30,9 +30,11 @@ function Home() {
           <img src={play} alt="play button" />
         </div>
       </motion.div>
-      <motion.div className="info"
-      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
-      variants={homeInfoAnimation}>
+      <motion.div
+        className="info"
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+        variants={homeInfoAnimation}
+      >
         <div className="grid">
           <div className="col">
             <strong>Agency</strong>
@@ -112,6 +114,27 @@ const Section = styled.section`
       grid-template-columns: repeat(3, 1fr);
       gap: 4rem;
       color: white;
+    }
+  }
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    .home {
+      .content {
+        padding-left: 2rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        .title {
+          h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+          }
+        }
+      }
+    }
+    .info {
+      position: initial;
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   }
 `;
