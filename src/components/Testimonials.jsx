@@ -16,7 +16,7 @@ function Testimonials() {
       designation: "Designer",
       name: "Lorem ipsum",
       review:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates est facere quam dolores eligendi rerum eaque dolorum error adipisci similique neque illo quo, officiis quae eius voluptatum laboriosam cumque nesciunt.",
+        "This portfolio was made following this tutorial https://www.youtube.com/watch?v=c8lnJzGVVpQ, I made some changes in responsive things. Tank you! <3",
     },
     {
       designation: "Developer",
