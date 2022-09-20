@@ -116,7 +116,7 @@ const Section = styled.section`
       color: white;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .home {
       .content {
         padding-left: 2rem;
@@ -134,6 +134,30 @@ const Section = styled.section`
       position: initial;
       .grid {
         grid-template-columns: 1fr;
+        text-align: center;
+
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .home {
+      .content {
+        padding-left: 2rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        .title {
+          h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+          }
+        }
+      }
+    }
+    .info {
+      position: initial;
+      .grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
   }

@@ -178,7 +178,7 @@ const Section = styled.section`
       color: white;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .background {
       display: none;
     }
@@ -192,6 +192,28 @@ const Section = styled.section`
           }
         }
       }
+    }
+    .sideTitle {
+      transform: translateY(50vw);
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+      padding: 4rem 0;
+      .testimonials {
+        width: 80%;
+        .testimonial {
+          .description {
+            height: 10rem;
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    .sideTitle {
+      transform: translateY(30vw);
     }
   }
 `;

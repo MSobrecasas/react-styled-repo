@@ -106,13 +106,15 @@ const Section = styled.section`
         text-transform: uppercase;
       }
       .description {
-        height: 10rem;
+        height: auto;
         color: var(--primary-color);
+        overflow: hidden;
       }
       .more {
         display: flex;
         align-items: center;
         gap: 1rem;
+        padding-top: 0 2rem;
         cursor: pointer;
         span {
           letter-spacing: 0.1rem;
@@ -122,7 +124,7 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 1024px) {
     margin: 2rem 0;
     .decoration {
       display: none;

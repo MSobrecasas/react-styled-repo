@@ -62,7 +62,7 @@ const Section = styled.section`
       top: 3rem;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .background {
       display: none;
     }
@@ -70,7 +70,16 @@ const Section = styled.section`
     padding: 6rem 2rem;
     .video {
       iframe {
-        height: 10rem;
+        height: 20rem;
+        width: 80vw;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {  
+    height: 100%;
+    padding: 6rem 2rem;
+    .video {
+      iframe {
         width: 80vw;
       }
     }

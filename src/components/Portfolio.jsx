@@ -211,7 +211,7 @@ const Section = styled.section`
       text-transform: uppercase;
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .background {
       display: none;
     }
@@ -235,7 +235,47 @@ const Section = styled.section`
         "six"
         "seven"
         "eight";
+
       .grid-box {
+        height: 10rem !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .background {
+      .design1 {
+        position: absolute;
+        z-index: -1;
+        right: 8%;
+        top: 0;
+      }
+      .design2 {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 30rem;
+        height: 40rem;
+      }
+    }
+    .portfolio__title {
+      margin: 0;
+      padding: 0 2rem;
+      text-align: center;
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+    .grid {
+      padding: 2rem 4rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "one two"
+        "three four"
+        "six five"
+        "seven eight";
+      .grid-box {
+        z-index: 3;
         height: 10rem !important;
       }
     }

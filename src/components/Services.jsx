@@ -101,12 +101,21 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .services {
       margin: 2rem 0;
       grid-template-columns: 1fr;
       gap: 2rem;
       padding: 0 2rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .services {
+      margin: 4rem 0;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 2rem 4rem;
     }
   }
 `;

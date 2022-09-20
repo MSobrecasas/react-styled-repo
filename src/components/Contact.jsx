@@ -65,7 +65,9 @@ const Section = styled.section`
   min-height: 100vh;
   .contact {
     color: var(--primary-color);
-    margin: 0 23rem;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 10rem;
     &__title {
       margin: 6rem 0;
       p {
@@ -146,15 +148,50 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     .contact {
       margin: 1rem;
-      padding: 0 1rem;
+      padding: 0 5rem;
       &__title {
         margin: 0;
         text-align: center;
+        padding: 2rem 0;
         p {
           font-size: 0.8rem;
+          padding-bottom: 0.5rem;
+        }
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+      &__data {
+        grid-template-columns: 1fr;
+        margin: 0;
+        p {
+          text-align: left;
+        }
+        &__form {
+          input {
+          }
+          button {
+            height: 6rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contact {
+      margin: 1rem;
+      padding: 2rem 10rem;
+      &__title {
+        margin: 0;
+        text-align: center;
+        padding: 2rem 0;
+        p {
+          font-size: 0.8rem;
+          padding-bottom: 0.5rem;
         }
         h2 {
           font-size: 1.3rem;

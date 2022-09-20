@@ -238,7 +238,7 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     padding: 1rem;
     background-color: var(--secondary-color);
     .pricing__title {
@@ -270,6 +270,38 @@ const Section = styled.section`
           &__price {
             p {
               font-size: 3rem;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .pricing__plan__content {
+            padding: 0rem;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .pricing {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 4rem;
+      &__plan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        &__name {
+          height: 13rem;
+          width: 13rem;
+          h2 {
+            font-size: 2.5rem;
+          }
+          &__price {
+            p {
+              font-size: 4rem;
             }
           }
         }

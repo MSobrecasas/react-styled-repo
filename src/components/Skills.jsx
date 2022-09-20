@@ -90,13 +90,13 @@ const Section = styled.section`
     .design1 {
       position: absolute;
       right: 0;
-      z-index: 1;
+      z-index: 0;
     }
     .design2 {
       position: absolute;
       left: 0;
       top: 20rem;
-      z-index: 1;
+      z-index: 0;
     }
   }
   .sideTitle {
@@ -108,6 +108,7 @@ const Section = styled.section`
   }
   .skills__title {
     padding: 6rem 10rem;
+    
     p {
       text-transform: uppercase;
       letter-spacing: 0.2rem;
@@ -175,7 +176,7 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     overflow-x: hidden;
     padding: 2rem 0;
     .background {
@@ -219,6 +220,58 @@ const Section = styled.section`
         padding: 0 2rem;
       }
     }
+
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    overflow-x: hidden;
+    padding: 2rem 0;
+    .background{
+      display: none;
+    }
+    .skills__title {
+      padding: 2rem;
+      text-align: center;
+      z-index: 2;
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+    .skills {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      &__bars {
+        padding: 0.2rem;
+        gap: 0rem;
+        align-items: center;
+        justify-content: center;
+        &__bar {
+          .container {
+            gap: 1.5rem;
+            progress {
+              width: 18rem;
+              height: 1.5rem;
+              &::-webkit-progress-bar {
+                height: 2rem;
+              }
+            }
+          }
+          span{
+            transform: translateY(-50%);
+          }
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      &__content {
+        padding: 0 4rem;
+      }
+    }
+    
   }
 `;
 

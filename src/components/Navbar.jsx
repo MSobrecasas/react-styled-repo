@@ -93,7 +93,7 @@ const Nav = styled(motion.nav)`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px)  {
     margin: 0;
     position: relative;
     .brand__container {
@@ -129,6 +129,47 @@ const Nav = styled(motion.nav)`
         text-align: center;
         height: 100%;
         justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    margin: 0;
+    position: relative;
+    .brand__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .brand {
+      }
+      .toggle {
+        padding-right: 1rem;
+        display: block;
+        z-index: 1;
+      }
+    }
+    .show {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .links {
+      position: absolute;
+      overflow-x: hidden;
+      top: 0;
+      right: 0;
+      width: ${({ state }) => (state ? "30%" : "0%")};
+      height: 100vh;
+      background-color: var(--secondary-color);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.4s ease-in-out;
+      ul {
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+        justify-content: center;
+        letter-spacing: 0.2rem;
       }
     }
   }

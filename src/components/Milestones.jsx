@@ -18,7 +18,7 @@ function Milestones() {
   ];
   return (
     <Section ref={element}>
-       <Title value="milestones" />
+      <Title value="milestones" />
       <div className="background">
         <img src={milestoneBackground} alt="milestone background" />
       </div>
@@ -94,7 +94,7 @@ const Section = styled.section`
       }
     }
   }
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     padding: 5rem 2rem;
     min-height: 100vh;
     height: 100%;
@@ -105,7 +105,35 @@ const Section = styled.section`
       grid-template-columns: 1fr;
       gap: 5rem;
     }
+    .sideTitle {
+      z-index: 2;
+      transform: translateX(-10%);
+      h1 {
+        color: white;
+      }
+    }
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+    height: 100%;
+    .background {
+      display: none;
+    }
+    .milestones {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+    .sideTitle {
+      z-index: 2;
+      transform: translateX(-5%);
+      h1 {
+        color: white;
+      }
+    }
+  }
+
 `;
 
 export default Milestones;
