@@ -17,7 +17,7 @@ function Footer() {
          type: "tween",
          duration: 0.8,
        }}
-      >&copy; Template created with love by Kishan Sheeth</motion.span>
+      >&copy; Template re-created by Maria Sobrecasas, Original Template by  Kishan Sheeth // </motion.span>
       <motion.div 
        animate={controls}
        variants={footerLogoAnimation}
